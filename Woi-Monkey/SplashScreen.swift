@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Splash_Screen: View {
+struct SplashScreen: View {
     var body: some View {
         VStack{
             Image("temp_logo2").resizable().frame(width: 220, height: 220).scaledToFit()
@@ -17,5 +17,5 @@ struct Splash_Screen: View {
 }
 
 #Preview {
-    Splash_Screen()
+    SplashScreen()
 }
