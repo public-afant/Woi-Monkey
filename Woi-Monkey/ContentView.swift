@@ -29,6 +29,7 @@ struct ContentView: View {
         } else {
             VStack{
                 Image("temp_logo").resizable().frame(width: 220,height: 220).scaledToFit()
+                Text("## Commit Test")
             }
         }
     }
