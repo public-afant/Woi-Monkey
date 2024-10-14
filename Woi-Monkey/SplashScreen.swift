@@ -9,7 +9,10 @@ import SwiftUI
 
 struct Splash_Screen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image("temp_logo2").resizable().frame(width: 220, height: 220).scaledToFit()
+            Text("Loaaaaaddddding..").bold()
+        }
     }
 }
 
