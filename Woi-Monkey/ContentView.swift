@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     // 프로그램이 실행되는 시점에 isLaunching 값을 True로 초기화
-    @State  var isLaunching:Bool = true
+    @State  var isLaunching:Bool = false
     
     
     var body: some View {
@@ -29,7 +29,7 @@ struct ContentView: View {
         } else {
             VStack{
                 Image("temp_logo").resizable().frame(width: 220,height: 220).scaledToFit()
-                Text("## Commit Test")
+                Text("## Commit Test").font(.system(size: 30))
             }
         }
     }

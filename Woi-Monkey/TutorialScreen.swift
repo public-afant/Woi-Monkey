@@ -7,11 +7,34 @@
 
 import SwiftUI
 
+
 struct TutorialScreen: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack{
+            
+            VStack{
+                
+                Text("Tutorial Screen")
+                Text("Tutorial Screen")
+                Text("Tutorial Screen")
+                Text("Tutorial Screen")
+                Text("Tutorial Screen")
+                Text("Tutorial Screen")
+                
+                Spacer()
+                Button{
+                    
+                    print("Handle Next!!")
+                    
+                }label: {
+                    Text("Next").frame(maxWidth: 300, maxHeight: 30).bold().font(.system(size: 22))
+                }.buttonStyle(.borderedProminent).tint(Color.purple)
+                
+            }
+        }
     }
 }
+
 
 #Preview {
     TutorialScreen()
