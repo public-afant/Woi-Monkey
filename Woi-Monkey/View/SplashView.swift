@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
-struct SplashScreen: View {
+struct SplashView: View {
     var body: some View {
         VStack{
-            Image("temp_logo2").resizable().frame(width: 220, height: 220).scaledToFit()
+            AnimatedImage(name:"monkey.gif").resizable().frame(width: 700, height: 400)
             Text("Loaaaaaddddding.....").bold()
         }
     }
 }
 
 #Preview {
-    SplashScreen()
+    SplashView()
 }
