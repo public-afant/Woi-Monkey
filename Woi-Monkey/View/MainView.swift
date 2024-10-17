@@ -14,7 +14,7 @@ struct MainView: View {
     var body: some View {
         NavigationStack(path:$path){
             VStack{
-                Text("Main Page(Monkey time)")
+                Text("Main Page(Monkey time)").foregroundColor(.bone)
                 Spacer()
                 
                 //커스텀 컴포넌트 버튼
