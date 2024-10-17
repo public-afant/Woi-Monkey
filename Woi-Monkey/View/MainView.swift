@@ -26,7 +26,7 @@ struct MainView: View {
                 case "TodoView":
                     TodoView(path: $path).navigationTitle("TodoView").navigationBarBackButtonHidden(true)
                 case "SetTimerView":
-                    SetTimerView(path:$path).navigationTitle("SetTimerView").navigationBarBackButtonHidden(true)
+                    SetTimerView(path:$path).navigationBarBackButtonHidden(true)
                 case "TimerView":
                     TimerView(path:$path).navigationTitle("TimerView").navigationBarBackButtonHidden(true)
                 case "DashboardView":
