@@ -15,6 +15,13 @@ struct Timer {
     var duration: Int
 }
 
+extension Int {
+    var doubleValue: Double {
+        get { Double(self) }
+        set { self = Int(newValue) }
+    }
+}
+
 struct SetTimerView: View {
     @Binding var path: [String]
     @State private var Time = Timer(duration: 15)   // default
@@ -36,7 +43,7 @@ struct SetTimerView: View {
                     .font(.system(size: 32))
                     
                 // 슬라이더: 최소5분, 최대60분, 보폭5분
-                Slider(value: $Time.duration.double, in: 5...60, step: 5)
+                Slider(value: $Time.duration.doubleValue, in: 5...60, step: 5)
                     .accentColor(.green) // 슬라이더의 색상
                     .background(Color.gray.opacity(0.2)) // 배경색
                     .cornerRadius(10) // 모서리 둥글게
