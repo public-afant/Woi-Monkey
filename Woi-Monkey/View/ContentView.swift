@@ -21,7 +21,7 @@ struct ContentView: View {
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                         withAnimation(.easeIn(duration: 1)) {
-                            // 1초가 지난 후 isLaunching 값을 false로 변경
+                            // 2초가 지난 후 isLaunching 값을 false로 변경
                             isLaunching = false
                         }
                     }

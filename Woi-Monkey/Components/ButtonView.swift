@@ -21,12 +21,12 @@ struct ButtonView: View {
         Button(action: action) {
                     Text(title)
                 .font(.system(size: CGFloat(size)))
-                        .foregroundColor(.white)
+                .foregroundColor(.black).bold()
                         .padding(.vertical, 10.0)
                         .frame(maxWidth: .infinity)
                         .background(backgroundColor)
                         .cornerRadius(8)
-                        .shadow(radius: 5).bold()
+//                        .shadow(radius: 5).bold()
                 }
 //        Button{
 //            

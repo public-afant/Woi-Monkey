@@ -13,6 +13,8 @@ struct SplashView: View {
         VStack{
             AnimatedImage(name:"monkey.gif").resizable().frame(width: 700, height: 400)
             Text("Loaaaaaddddding.....").bold()
+            
+
         }
     }
 }
