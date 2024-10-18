@@ -19,21 +19,14 @@ struct ButtonView: View {
     var body: some View {
         
         Button(action: action) {
-                    Text(title)
+            Text(title)
                 .font(.system(size: CGFloat(size)))
                 .foregroundColor(.black).bold()
                 .padding(.vertical, 15.0)
-                        .frame(maxWidth: .infinity)
-                        .background(backgroundColor)
-                        .cornerRadius(8)
-//                        .shadow(radius: 5).bold()
-                }
-//        Button{
-//            
-//        }label: {
-//            Text("Next").frame(maxWidth: 300, maxHeight: 30).bold().font(.system(size: 1))
-//        }.buttonStyle(.borderedProminent).tint(.primaryColor)
-        
+                .frame(maxWidth: .infinity)
+                .background(backgroundColor)
+                .cornerRadius(8)
+        }
     }
 }
 

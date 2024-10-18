@@ -29,7 +29,6 @@ struct SetTimerView: View {
                         Slider(value: $duration.doubleValue, in: 5...60, step: 5)
                             .accentColor(.primaryColor)
                             .cornerRadius(10)
-//                            .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 5)
                             .padding(10.0)
                         Text("🙉")
                             .font(.system(size: 32))
