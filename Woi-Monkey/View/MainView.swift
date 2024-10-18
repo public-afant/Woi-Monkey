@@ -17,6 +17,7 @@ struct MainView: View {
             ZStack{
                 Color.primaryWhite.ignoresSafeArea()
                 VStack{
+                    Spacer()
                     Text("Main Page\n(Monkey time)").foregroundColor(.orange).font(.customFont32).multilineTextAlignment(.center)
                     Spacer()
                     
