@@ -24,7 +24,7 @@ struct MainView: View {
                 value in
                 switch value{
                 case "TodoView":
-                    TodoView(path: $path).navigationTitle("TodoView").navigationBarBackButtonHidden(true)
+                    TodoView(path: $path).navigationBarBackButtonHidden(true)
                 case "SetTimerView":
                     SetTimerView(path:$path).navigationTitle("SetTimerView").navigationBarBackButtonHidden(true)
                 case "TimerView":

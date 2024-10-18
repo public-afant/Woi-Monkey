@@ -9,20 +9,60 @@ import SwiftUI
 
 struct TodoView: View {
     
+    @State var title: String = ""
+    @FocusState private var titleFieldIsFocused: Bool
+    
+    
     @Binding var path: [String]
     
     var body: some View {
-        VStack{
-            Text("TodoViiiiew!")
-            Spacer()
+        
+        ZStack{
+            Color.primaryWhite.ignoresSafeArea()
             
-            //커스텀 컴포넌트 버튼
-            ButtonView(title: "Set Timer", backgroundColor: .primaryColor, size: 18, action: {path.append("SetTimerView")})
-            
-            
-        }.padding()
+            VStack(alignment: .leading){
+                Spacer().frame(height: 100)
+                Text("해야할 일을 지금 바로 적어보세요!")
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.leading).font(.system(size: 34))
+                    .lineLimit(2)
+                
+                TextField(
+                    "예시) 몽키를 물리치고 회사 일 끝내기!",
+                    text: $title
+                )
+                .focused($titleFieldIsFocused)
+                .textInputAutocapitalization(.never)
+                .disableAutocorrection(true)
+                .padding(.horizontal, 5)
+                Rectangle().frame(height: 3).foregroundStyle(title.isEmpty ? .primaryOrange.opacity(0.3) : .primaryOrange).padding(.horizontal,5)
+                
+                Spacer()
+                
+                //커스텀 컴포넌트 버튼
+                ButtonView(title: "다음", backgroundColor: title.isEmpty ? .primaryColor.opacity(0.3) : .primaryColor, size: 18, action: {
+                    //                path.append("SetTimerView")
+                    print(title)
+                }).disabled(title.isEmpty)
+                
+                
+            }.padding()
+                .onTapGesture {
+                    // 화면의 다른 부분을 터치하면 키보드를 숨김
+                    hideKeyboard()
+                }
+        }
+        
     }
 }
+
+
+extension View {
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
 
 #Preview {
     TodoView(path: .constant([]))
