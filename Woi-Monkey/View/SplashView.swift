@@ -10,11 +10,15 @@ import SDWebImageSwiftUI
 
 struct SplashView: View {
     var body: some View {
-        VStack{
-            AnimatedImage(name:"monkey.gif").resizable().frame(width: 700, height: 400)
-            Text("Loaaaaaddddding.....").bold()
+        ZStack{
+            Color.champangne.ignoresSafeArea()
             
-
+            VStack{
+                AnimatedImage(name:"monkey_ori.gif").resizable().frame(width: 300, height: 300)
+                Text("Loading..").fontWeight(.bold).font(.customFont24)
+                
+                
+            }
         }
     }
 }
