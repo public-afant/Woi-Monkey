@@ -24,13 +24,17 @@ struct TodoView: View {
                 Spacer().frame(height: 100)
                 Text("해야할 일을 지금 바로 적어보세요!")
                     .fontWeight(.bold)
-                    .multilineTextAlignment(.leading).font(.system(size: 34))
                     .lineLimit(2)
+                    .font(.customFont32)
+                    .lineSpacing(12)
+                
+                Spacer().frame(height: 50)
+                
                 
                 TextField(
                     "예시) 몽키를 물리치고 회사 일 끝내기!",
                     text: $title
-                )
+                ).font(.customFont18)
                 .focused($titleFieldIsFocused)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
@@ -40,9 +44,8 @@ struct TodoView: View {
                 Spacer()
                 
                 //커스텀 컴포넌트 버튼
-                ButtonView(title: "다음", backgroundColor: title.isEmpty ? .primaryColor.opacity(0.3) : .primaryColor, size: 18, action: {
-                    //                path.append("SetTimerView")
-                    print(title)
+                ButtonView(title: "다 음", backgroundColor: title.isEmpty ? .primaryColor.opacity(0.3) : .primaryColor, size: 18, action: {
+                                    path.append("SetTimerView")
                 }).disabled(title.isEmpty)
                 
                 

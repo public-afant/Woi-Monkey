@@ -16,11 +16,14 @@ struct SetTimerView: View {
             Color.primaryWhite.ignoresSafeArea()
             VStack {
                 VStack {
-                    Text("시간을 설정해주세요")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Text("\(duration) 분")
-                        .font(.title).fontWeight(.bold)
+                    
+                    Text("시간을 설정해주세요!")
+                        .font(.customFont26)
+                    
+                    
+                    Text("\(duration)분")
+                        .font(.customFontBig)
+                        .padding(20.0)
                     
                     HStack {
                         Text("🙈")
@@ -35,18 +38,20 @@ struct SetTimerView: View {
                     }
                     
                     ButtonView(
-                        title: "시작",
+                        title: "시 작",
                         backgroundColor: .primaryColor,
                         size: 25,
                         action: {path.append("TimerView")}
                     )
                 }
-                .padding(.all, 40.0)
+                .padding(.horizontal, 30.0)
+                .padding(.top, 40.0)
+                .padding(.bottom, 30.0)
                 .background(Color.primaryChampangne)
                 .cornerRadius(15)
-                .shadow(radius: 10)
+//                .shadow(radius: 10)
             }
-            .padding(.horizontal, 30.0)
+            .padding(.horizontal, 20.0)
         }
     }
 }

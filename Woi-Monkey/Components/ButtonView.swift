@@ -20,7 +20,7 @@ struct ButtonView: View {
         
         Button(action: action) {
             Text(title)
-                .font(.system(size: CGFloat(size)))
+                .font(Font.custom("DungGeunMo", size: CGFloat(size)))
                 .foregroundColor(.black).bold()
                 .padding(.vertical, 15.0)
                 .frame(maxWidth: .infinity)
@@ -31,5 +31,5 @@ struct ButtonView: View {
 }
 
 #Preview {
-    ButtonView(title: "title", backgroundColor: .primaryColor,size: 18, action: {})
+    ButtonView(title: "안녕하세요", backgroundColor: .primaryColor,size: 18, action: {})
 }

@@ -14,8 +14,8 @@ struct SplashView: View {
             Color.champangne.ignoresSafeArea()
             
             VStack{
-                AnimatedImage(name:"monkey_ori.gif").resizable().frame(width: 300, height: 300)
-                Text("Loading..").fontWeight(.bold).font(.customFont24)
+                AnimatedImage(name:"monkey_ori.gif").frame(width: 300, height: 300)
+                Text("Loading..").font(.customFont24)
                 
                 
             }
