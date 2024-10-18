@@ -6,4 +6,5 @@ extension Color {
     static let champangne = Color("primaryChampangne")
     static let white = Color("primaryWhite")
     static let bone = Color("primaryBone")
+    static let gray = Color("primaryGray")
 }
