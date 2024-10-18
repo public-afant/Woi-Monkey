@@ -22,7 +22,7 @@ struct ButtonView: View {
                     Text(title)
                 .font(.system(size: CGFloat(size)))
                 .foregroundColor(.black).bold()
-                        .padding(.vertical, 10.0)
+                .padding(.vertical, 15.0)
                         .frame(maxWidth: .infinity)
                         .background(backgroundColor)
                         .cornerRadius(8)
