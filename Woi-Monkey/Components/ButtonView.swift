@@ -23,7 +23,7 @@ struct ButtonView: View {
                 .font(Font.custom("DungGeunMo", size: CGFloat(size)))
                 .foregroundColor(.black).bold()
                 .padding(.vertical, 15.0)
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, maxHeight: 50)
                 .background(backgroundColor)
                 .cornerRadius(8)
         }
