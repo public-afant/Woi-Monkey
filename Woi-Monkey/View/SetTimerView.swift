@@ -9,7 +9,7 @@ extension Int {
 
 struct SetTimerView: View {
     @Binding var path: [String]
-    @State private var duration:Int = 15
+    @Binding var time: Double
     
     var body: some View {
         ZStack {
@@ -21,7 +21,7 @@ struct SetTimerView: View {
                         .font(.customFont26)
                     
                     
-                    Text("\(duration)분")
+                    Text("\(Int(time))분")
                         .font(.customFontBig)
                         .padding(20.0)
                     
@@ -29,7 +29,7 @@ struct SetTimerView: View {
                         Text("🙈")
                             .font(.system(size: 32))
                         
-                        Slider(value: $duration.doubleValue, in: 5...60, step: 5)
+                        Slider(value: $time, in: 5...60, step: 5)
                             .accentColor(.primaryColor)
                             .cornerRadius(10)
                             .padding(10.0)
@@ -57,5 +57,5 @@ struct SetTimerView: View {
 }
 
 #Preview {
-    SetTimerView(path: .constant([]))
+    SetTimerView(path: .constant([]), time: .constant(0.0))
 }

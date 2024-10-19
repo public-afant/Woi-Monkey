@@ -12,6 +12,7 @@ struct MainView: View {
     
     @State var path: [String] = []
     @State var title: String = ""
+    @State var time: Double = 15.0
     @State var isBlinking: Bool = false
     
     var body: some View {
@@ -51,9 +52,10 @@ struct MainView: View {
                         case "TodoView":
                             TodoView(path: $path, title: $title).navigationBarBackButtonHidden(false)
                         case "SetTimerView":
-                            SetTimerView(path: $path).navigationBarBackButtonHidden(false)
+                            SetTimerView(path:$path,
+                                         time:$time).navigationBarBackButtonHidden(false)
                         case "TimerView":
-                            TimerView(path: $path).navigationTitle("TimerView").navigationBarBackButtonHidden(false)
+                            TimerView(path:$path, time:$time).navigationTitle("TimerView").navigationBarBackButtonHidden(false)
                         case "DashboardView":
                             DashboardView(path: $path, title: $title).navigationBarBackButtonHidden(true)
                         default:
