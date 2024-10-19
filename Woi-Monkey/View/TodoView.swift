@@ -9,12 +9,10 @@ import SwiftUI
 
 struct TodoView: View {
     
-    @State var title: String = ""
-    @FocusState private var titleFieldIsFocused: Bool
-    
-    
     @Binding var path: [String]
-    
+    @Binding var title: String
+    @FocusState private var titleFieldIsFocused: Bool
+   
     var body: some View {
         
         ZStack{
@@ -33,13 +31,16 @@ struct TodoView: View {
                 
                 TextField(
                     "예시) 몽키를 물리치고 회사 일 끝내기!",
-                    text: $title
+                    text: $title,
+                    axis: .vertical
                 ).font(.customFont18)
                 .focused($titleFieldIsFocused)
                 .textInputAutocapitalization(.never)
                 .disableAutocorrection(true)
                 .padding(.horizontal, 5)
-                Rectangle().frame(height: 3).foregroundStyle(title.isEmpty ? .primaryOrange.opacity(0.3) : .primaryOrange).padding(.horizontal,5)
+                .lineLimit(1...10)
+                
+                RoundedRectangle(cornerRadius: 10).frame(height: 3).foregroundStyle(title.isEmpty ? .primaryOrange.opacity(0.3) : .primaryOrange).padding(.horizontal,5)
                 
                 Spacer()
                 
@@ -68,5 +69,5 @@ extension View {
 
 
 #Preview {
-    TodoView(path: .constant([]))
+    TodoView(path: .constant([]), title: .constant(""))
 }
