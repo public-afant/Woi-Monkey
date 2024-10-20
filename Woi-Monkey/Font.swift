@@ -12,6 +12,8 @@ extension Font {
     static let customFont12: Font = .custom("DungGeunMo", size: 12)
 
     static let customFont14: Font = .custom("DungGeunMo", size: 14)
+    
+    static let customFont16: Font = .custom("DungGeunMo", size: 16)
 
     static let customFont18: Font = .custom("DungGeunMo", size: 18)
 
