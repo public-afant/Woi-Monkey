@@ -8,4 +8,5 @@ extension Color {
     static let white = Color("primaryWhite")
     static let bone = Color("primaryBone")
     static let gray = Color("primaryGray")
+    static let back = Color("back")
 }

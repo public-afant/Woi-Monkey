@@ -2,12 +2,20 @@
 
 import SwiftUI
 
+import ActivityKit
+
 class TimerModel: ObservableObject {
+    
+   
+    
     @Published var timeString = "00:00:00"
     private var secondsElapsed = 0
     private var timer: Timer?
     @Published var isPaused = false // 일시정지 상태를 추적하는 변수
+    
+//    @State private var activity: Activity<DynamicIslandWidgetAttributes>? = nil
 
+    
     // 타이머 시작
     func startTimer() {
         timer?.invalidate()  // 기존 타이머가 있으면 중지
@@ -17,6 +25,16 @@ class TimerModel: ObservableObject {
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
             self.secondsElapsed += 1
             self.timeString = self.formatTime(self.secondsElapsed)
+            
+            
+//            if let activity = activity {
+//                let updatedContentState = DynamicIslandWidgetAttributes.ContentState(time: timeString)
+//                Task {
+//                    await activity.update(ActivityContent(state: updatedContentState, staleDate: nil))
+//                }
+//            }
+            
+            
         }
     }
     
@@ -41,9 +59,6 @@ class TimerModel: ObservableObject {
             self.timeString = self.formatTime(self.secondsElapsed)
         }
     }
-    
-    
-    
     // 초를 시/분/초 형식으로 포맷팅하는 함수
     private func formatTime(_ totalSeconds: Int) -> String {
         let hours = totalSeconds / 3600
