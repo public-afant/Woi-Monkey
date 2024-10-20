@@ -11,15 +11,20 @@ struct TimerView: View {
     @Binding var path: [String]
     
     var body: some View {
-        VStack{
-            Text("Timer View!")
-            Spacer()
+        
+        ZStack{
+            Color.primaryWhite.ignoresSafeArea()
             
-            //커스텀 컴포넌트 버튼
-            ButtonView(title: "DashBoard", backgroundColor: .primaryColor, size: 18, action: {path.append("DashboardView")})
-            
-         
-        }.padding()
+            VStack{
+                Text("Timer View!")
+                Spacer()
+                
+                //커스텀 컴포넌트 버튼
+                ButtonView(title: "DashBoard", backgroundColor: .primaryColor, size: 18, action: {path.append("DashboardView")})
+                
+                
+            }.padding()
+        }.navigationBarItems(leading: BackButton(path: $path))
     }
 }
 
