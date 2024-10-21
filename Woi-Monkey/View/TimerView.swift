@@ -16,17 +16,21 @@ struct TimerView: View {
     var symbolWeight:Font.Weight = .light
     
     var body: some View {
-        VStack{
-                    Text("Timer View!")
-                    Spacer()
-                    
-                    //커스텀 컴포넌트 버튼
-                    ButtonView(title: "DashBoard", backgroundColor: .primaryColor, size: 18, action: {path.append("TimerView")})
-                    
-                 
-                }.padding()
-            }
+        ZStack{
+            Color.primaryWhite.ignoresSafeArea()
+            
+            VStack{
+                Text("Timer View!")
+                Spacer()
+                
+                //커스텀 컴포넌트 버튼
+                ButtonView(title: "DashBoard", backgroundColor: .primaryColor, size: 18, action: {path.append("DashboardView")})
+                
+                
+            }.padding()
+        }.navigationBarItems(leading: BackButton(path: $path))
     }
+}
 
 
 #Preview {

@@ -8,10 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		F874FD572CBE8F0800F6BDB4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F874FD562CBE8F0800F6BDB4 /* SDWebImageSwiftUI */; };
+		F8E810EC2CC3F63500A3F875 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E810EB2CC3F63500A3F875 /* WidgetKit.framework */; };
+		F8E810EE2CC3F63500A3F875 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E810ED2CC3F63500A3F875 /* SwiftUI.framework */; };
+		F8E810FF2CC3F63700A3F875 /* DynamicIslandWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F8E810E92CC3F63500A3F875 /* DynamicIslandWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8E810FD2CC3F63700A3F875 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8CEC29A2CBD2CFE00C85706 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8E810E82CC3F63500A3F875;
+			remoteInfo = DynamicIslandWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8E811042CC3F63700A3F875 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F8E810FF2CC3F63700A3F875 /* DynamicIslandWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F8CEC2A22CBD2CFE00C85706 /* Woi-Monkey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Woi-Monkey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8E810E92CC3F63500A3F875 /* DynamicIslandWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DynamicIslandWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8E810EB2CC3F63500A3F875 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F8E810ED2CC3F63500A3F875 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -19,6 +49,20 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+			);
+			target = F8CEC2A12CBD2CFE00C85706 /* Woi-Monkey */;
+		};
+		F8E811002CC3F63700A3F875 /* Exceptions for "DynamicIslandWidget" folder in "DynamicIslandWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = F8E810E82CC3F63500A3F875 /* DynamicIslandWidgetExtension */;
+		};
+		F8E811062CC3FB7000A3F875 /* Exceptions for "DynamicIslandWidget" folder in "Woi-Monkey" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				DynamicIslandWidgetLiveActivity.swift,
 			);
 			target = F8CEC2A12CBD2CFE00C85706 /* Woi-Monkey */;
 		};
@@ -33,6 +77,15 @@
 			path = "Woi-Monkey";
 			sourceTree = "<group>";
 		};
+		F8E810EF2CC3F63500A3F875 /* DynamicIslandWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				F8E811062CC3FB7000A3F875 /* Exceptions for "DynamicIslandWidget" folder in "Woi-Monkey" target */,
+				F8E811002CC3F63700A3F875 /* Exceptions for "DynamicIslandWidget" folder in "DynamicIslandWidgetExtension" target */,
+			);
+			path = DynamicIslandWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,12 +97,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8E810E62CC3F63500A3F875 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8E810EE2CC3F63500A3F875 /* SwiftUI.framework in Frameworks */,
+				F8E810EC2CC3F63500A3F875 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		F8CEC2992CBD2CFE00C85706 = {
 			isa = PBXGroup;
 			children = (
+				F8E810EF2CC3F63500A3F875 /* DynamicIslandWidget */,
+				F8E810EA2CC3F63500A3F875 /* Frameworks */,
 				F8CEC2A32CBD2CFE00C85706 /* Products */,
 				F8CEC2A42CBD2CFE00C85706 /* Woi-Monkey */,
 			);
@@ -59,8 +123,18 @@
 			isa = PBXGroup;
 			children = (
 				F8CEC2A22CBD2CFE00C85706 /* Woi-Monkey.app */,
+				F8E810E92CC3F63500A3F875 /* DynamicIslandWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F8E810EA2CC3F63500A3F875 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8E810EB2CC3F63500A3F875 /* WidgetKit.framework */,
+				F8E810ED2CC3F63500A3F875 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,10 +147,12 @@
 				F8CEC29E2CBD2CFE00C85706 /* Sources */,
 				F8CEC29F2CBD2CFE00C85706 /* Frameworks */,
 				F8CEC2A02CBD2CFE00C85706 /* Resources */,
+				F8E811042CC3F63700A3F875 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F8E810FE2CC3F63700A3F875 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				F8CEC2A42CBD2CFE00C85706 /* Woi-Monkey */,
@@ -89,6 +165,28 @@
 			productReference = F8CEC2A22CBD2CFE00C85706 /* Woi-Monkey.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F8E810E82CC3F63500A3F875 /* DynamicIslandWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8E811012CC3F63700A3F875 /* Build configuration list for PBXNativeTarget "DynamicIslandWidgetExtension" */;
+			buildPhases = (
+				F8E810E52CC3F63500A3F875 /* Sources */,
+				F8E810E62CC3F63500A3F875 /* Frameworks */,
+				F8E810E72CC3F63500A3F875 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				F8E810EF2CC3F63500A3F875 /* DynamicIslandWidget */,
+			);
+			name = DynamicIslandWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = DynamicIslandWidgetExtension;
+			productReference = F8E810E92CC3F63500A3F875 /* DynamicIslandWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -100,6 +198,9 @@
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					F8CEC2A12CBD2CFE00C85706 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					F8E810E82CC3F63500A3F875 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
@@ -122,12 +223,20 @@
 			projectRoot = "";
 			targets = (
 				F8CEC2A12CBD2CFE00C85706 /* Woi-Monkey */,
+				F8E810E82CC3F63500A3F875 /* DynamicIslandWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F8CEC2A02CBD2CFE00C85706 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8E810E72CC3F63500A3F875 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -144,7 +253,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F8E810E52CC3F63500A3F875 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8E810FE2CC3F63700A3F875 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8E810E82CC3F63500A3F875 /* DynamicIslandWidgetExtension */;
+			targetProxy = F8E810FD2CC3F63700A3F875 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F8CEC2B02CBD2D0000C85706 /* Debug */ = {
@@ -278,12 +402,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Woi-Monkey/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "워이몽키";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(INFOPLIST_KEY_CFBundleDisplayName)";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,12 +436,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Woi-Monkey/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "워이몽키";
+				INFOPLIST_KEY_CFBundleDisplayName = "$(INFOPLIST_KEY_CFBundleDisplayName)";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -325,6 +455,62 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F8E811022CC3F63700A3F875 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5738QYFVSE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DynamicIslandWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DynamicIslandWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.afant.Woi-Monkey.DynamicIslandWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F8E811032CC3F63700A3F875 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5738QYFVSE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DynamicIslandWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DynamicIslandWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.afant.Woi-Monkey.DynamicIslandWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -345,6 +531,15 @@
 			buildConfigurations = (
 				F8CEC2B32CBD2D0000C85706 /* Debug */,
 				F8CEC2B42CBD2D0000C85706 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8E811012CC3F63700A3F875 /* Build configuration list for PBXNativeTarget "DynamicIslandWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8E811022CC3F63700A3F875 /* Debug */,
+				F8E811032CC3F63700A3F875 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -40,7 +40,7 @@ struct TodoView: View {
                 .padding(.horizontal, 5)
                 .lineLimit(1...10)
                 
-                RoundedRectangle(cornerRadius: 10).frame(height: 3).foregroundStyle(title.isEmpty ? .primaryOrange.opacity(0.3) : .primaryOrange).padding(.horizontal,5)
+                RoundedRectangle(cornerRadius: 10).frame(height: 3).foregroundStyle(title.isEmpty ? .primaryOrange.opacity(0.4) : .primaryOrange).padding(.horizontal,5)
                 
                 Spacer()
                 
@@ -55,7 +55,7 @@ struct TodoView: View {
                     // 화면의 다른 부분을 터치하면 키보드를 숨김
                     hideKeyboard()
                 }
-        }
+        }.navigationBarItems(leading: BackButton(path: $path))
         
     }
 }

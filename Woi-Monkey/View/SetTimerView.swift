@@ -52,7 +52,7 @@ struct SetTimerView: View {
 //                .shadow(radius: 10)
             }
             .padding(.horizontal, 20.0)
-        }
+        }.navigationBarItems(leading: BackButton(path: $path))
     }
 }
 
