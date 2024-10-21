@@ -9,9 +9,13 @@ import SwiftUI
 
 struct TimerView: View {
     @Binding var path: [String]
+    @Binding var time: Double
+    @StateObject private var timerModel = TimerModel()
+    
+    var symbolSize:CGFloat = 60
+    var symbolWeight:Font.Weight = .light
     
     var body: some View {
-        
         ZStack{
             Color.primaryWhite.ignoresSafeArea()
             
@@ -28,6 +32,7 @@ struct TimerView: View {
     }
 }
 
+
 #Preview {
-    TimerView(path:.constant([]))
+    TimerView(path: .constant([]), time: .constant(0.0))
 }
