@@ -44,6 +44,12 @@ struct MainView: View {
                             .onAppear {
                                 isBlinking = true
                             }
+                            .onAppear {
+                                NotificationManager.shared.requestNotificationPermission()
+                                NotificationManager.shared.scheduleMultipleNotifications()
+                            }
+                        
+                        
                         Spacer()
                     }.navigationDestination(for: String.self){
                         value in
@@ -56,6 +62,9 @@ struct MainView: View {
                             TimerView(path:$path, time:$time).navigationBarBackButtonHidden(true)
                         case "DashboardView":
                             DashboardView(path: $path, title: $title).navigationBarBackButtonHidden(true)
+                        case "NotificationView":
+                            NotificationView(path: $path, title:
+                            $title).navigationBarBackButtonHidden(true)
                         default:
                             Text("Error!")
                         }

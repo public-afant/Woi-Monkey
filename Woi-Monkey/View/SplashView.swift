@@ -8,6 +8,7 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+
 struct SplashView: View {
     var body: some View {
         ZStack{
@@ -16,9 +17,8 @@ struct SplashView: View {
             VStack{
                 AnimatedImage(name:"monkey_ori.gif").frame(width: 300, height: 300)
                 Text("Loading..").font(.customFont24)
-                
-                
             }
+            
         }
     }
 }

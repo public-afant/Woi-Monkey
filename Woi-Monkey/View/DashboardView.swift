@@ -80,7 +80,9 @@ struct DashboardView: View {
 //                    }
                     Image("button_stop").resizable().frame(width: 60,height: 60).onTapGesture {
                         stopTimer()
-                        path.removeAll()
+                        path.append("NotificationView")
+                        
+//                        path.removeAll()
                     }
                     
                 }.padding(.horizontal, 30.0)
