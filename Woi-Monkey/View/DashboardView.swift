@@ -80,7 +80,9 @@ struct DashboardView: View {
 //                    }
                     Image(systemName: "stop.circle").font(.system(size: symbolSize,weight: symbolWeight)).onTapGesture {
                         stopTimer()
-                        path.removeAll()
+                        path.append("NotificationView")
+                        
+//                        path.removeAll()
                     }
                     
                 }.padding(.horizontal, 30.0)
