@@ -13,40 +13,29 @@ struct NotificationView: View {
             VStack {
                 VStack {
                     Text("다음 집중시간 알림을 설정해주세요")
-                        .font(.customFont26)
+                        .font(.customFont26).lineSpacing(5)
                     
                     HStack {
                         Picker("Hour", selection: $selectedHour) {
                             ForEach(0..<24) { hour in
-                                Text("\(hour)시").tag(hour).font(.customFont18)
+                                Text("\(hour)시").tag(hour).font(.customFont24)
                             }
                         }
                         .pickerStyle(WheelPickerStyle())
                         Picker("Minute", selection: $selectedMinute) {
                             ForEach(0..<60) { minute in
-                                Text("\(minute)분").tag(minute).font(.customFont18)
+                                Text("\(minute)분").tag(minute).font(.customFont24)
                             }
                         }
                         .pickerStyle(WheelPickerStyle())
                     }
                     .frame(height: 150)
-                    Button(action: {
+                    
+                    ButtonView(title: "설 정", backgroundColor: .primaryColor, size: 22, action: {
                         scheduleNotification()
                         path.removeAll()
-                    }) {
-                        Text("설 정")
-                            .font(.customFont26)
-                            .frame(width: 200, height: 50)
-                            .background(Color.primaryColor)
-                            .foregroundColor(.black)
-                            .cornerRadius(10)
-                    }
-                    //                    ButtonView(
-                    //                        title: "설 정",
-                    //                        backgroundColor: .primaryColor,
-                    //                        size: 25,
-                    //                        action: {path.append("TimerView")}
-                    //                    )
+                    })
+                    
                 }
                 .padding(.horizontal, 30.0)
                 .padding(.top, 40.0)

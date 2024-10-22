@@ -21,19 +21,23 @@ struct TimerView: View {
                     Text("준비해주세요!")
                         .font(.customFont26)
                     
-                    Text("\(Int(time))분")
-                        .font(.customFontBig)
-                        .multilineTextAlignment(.center)
-                        .padding()
+//                    Text("\(Int(time))분")
+//                        .font(.customFontBig)
+//                        .multilineTextAlignment(.center)
+//                        .padding()
                     
                     Text(formattedTime())
-                        .font(.customFontBig)
+                        .font(.customFont72)
                         .fontWeight(.bold)
-                        .padding()
+                        .padding(/*@START_MENU_TOKEN@*/.all, 40.0/*@END_MENU_TOKEN@*/)
+                        
                     
                     ButtonView(title: "준비가 끝났어요", backgroundColor: .primaryColor, size: 18, action: {
+                        timer?.invalidate() // 타이머 종료
+                        time = 10.0 // 타이머 값 초기화
                         path.append("DashboardView")
                     })
+                    
                 }
                 .padding(.horizontal, 30.0)
                 .padding(.top, 40.0)

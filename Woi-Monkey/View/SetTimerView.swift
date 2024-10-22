@@ -40,7 +40,7 @@ struct SetTimerView: View {
                     ButtonView(
                         title: "시 작",
                         backgroundColor: .primaryColor,
-                        size: 25,
+                        size: 22,
                         action: {path.append("TimerView")}
                     )
                 }

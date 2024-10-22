@@ -35,6 +35,10 @@ extension Font {
     
     static let customFontBig: Font = .custom("DungGeunMo", size: 56)
     
+    static let customFont72: Font = .custom("DungGeunMo", size: 72)
+
+    
+    
 
     
     
