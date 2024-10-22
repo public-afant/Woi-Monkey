@@ -12,10 +12,13 @@ struct ContentView: View {
     // 프로그램이 실행되는 시점에 isLaunching 값을 True로 초기화
     @State  var isLaunching:Bool = true
     
+    @State private var showTutorial: Bool = false // 튜토리얼 표시 여부
+    @AppStorage("isFirstLaunch") private var isFirstLaunch: Bool = true // 첫 실행 여부 저장
+    
+    
     
     var body: some View {
         
-        // isLaunching이 True 값이면 스플레시화면 송출
         if isLaunching {
             SplashView().onAppear().opacity(isLaunching ? 1 : 0)
                 .onAppear {
@@ -27,7 +30,19 @@ struct ContentView: View {
                     }
                 }
         } else {
-            MainView()
+            
+            ZStack{
+                MainView(showTutorial: $showTutorial)
+                if showTutorial {
+                    TutorialView(showTutorial: $showTutorial)
+                }
+            }.onAppear(){
+            
+                if isFirstLaunch {
+                    showTutorial = true
+//                    isFirstLaunch = false
+                }
+            }
         }
     }
     

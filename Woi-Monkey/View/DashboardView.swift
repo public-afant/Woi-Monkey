@@ -78,7 +78,7 @@ struct DashboardView: View {
 //                            timerModel.pauseTimer()
 //                        }
 //                    }
-                    Image(systemName: "stop.circle").font(.system(size: symbolSize,weight: symbolWeight)).onTapGesture {
+                    Image("button_stop").resizable().frame(width: 60,height: 60).onTapGesture {
                         stopTimer()
                         path.removeAll()
                     }

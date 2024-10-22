@@ -61,6 +61,7 @@ struct TimerView: View {
                 timeRemaining -= 1
             } else {
                 timer?.invalidate() // 타이머 종료
+                time = 10.0 // 타이머 값 초기화
                 path.append("DashboardView")
             }
         }
