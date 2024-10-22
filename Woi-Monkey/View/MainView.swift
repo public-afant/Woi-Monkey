@@ -61,8 +61,8 @@ struct MainView: View {
                             TimerView(path:$path, time:$time).navigationBarBackButtonHidden(true)
                         case "DashboardView":
                             DashboardView(path: $path, title: $title).navigationBarBackButtonHidden(true)
-                        case "NotificationSchedulerView":
-                            NotificationSchedulerView(path: $path, title:
+                        case "NotificationView":
+                            NotificationView(path: $path, title:
                             $title).navigationBarBackButtonHidden(true)
                         default:
                             Text("Error!")
