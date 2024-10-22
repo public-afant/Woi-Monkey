@@ -31,6 +31,7 @@ struct NotificationView: View {
                     }
                     .frame(height: 150)
                     Button(action: {
+                        scheduleNotification()
                         path.removeAll()
                     }) {
                         Text("설 정")
@@ -65,29 +66,29 @@ struct NotificationView: View {
                 NotificationManager.shared.requestNotificationPermission()
             }
     }
+    
+    
+    func scheduleNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "워이~ 몽키"
+        content.body = "머릿속의 몽키를 내쫒아주세요"
+        content.sound = .default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("알림 추가 실패: \(error.localizedDescription)")
+            } else {
+                // 알림이 성공적으로 추가된 후 앱 처음으로 돌아가기
+                DispatchQueue.main.async {
+                    path.removeAll()  // 변경 가능한 Binding으로 선언된 path 수정
+                }
+            }
+        }
+    }
 }
-//    
-//    
-//    func scheduleNotification() {
-//        let content = UNMutableNotificationContent()
-//        content.title = "워이~ 몽키"
-//        content.body = "머릿속의 몽키를 내쫒아주세요"
-//        content.sound = .default
-//
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-//        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-//
-//        UNUserNotificationCenter.current().add(request) { error in
-//            if let error = error {
-//                print("알림 추가 실패: \(error.localizedDescription)")
-//            } else {
-//                // 알림이 성공적으로 추가된 후 앱 처음으로 돌아가기
-//                DispatchQueue.main.async {
-//                    path.removeAll()  // 변경 가능한 Binding으로 선언된 path 수정
-//                }
-//            }
-//        }
-//    }
 
 #Preview {
     NotificationView(path: .constant([]), title: .constant(""))
