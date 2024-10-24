@@ -26,15 +26,16 @@ struct SetTimerView: View {
                         .padding(20.0)
                     
                     HStack {
-                        Text("🙈")
-                            .font(.system(size: 32))
+                        Text("-")
+                            .font(.customFontBig)
                         
                         Slider(value: $time, in: 5...60, step: 5)
                             .accentColor(.primaryColor)
                             .cornerRadius(10)
                             .padding(10.0)
-                        Text("🙉")
-                            .font(.system(size: 32))
+                        Text("+")
+                            .font(.customFontBig)
+
                     }
                     
                     ButtonView(
