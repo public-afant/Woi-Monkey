@@ -33,6 +33,7 @@ struct SetTimerView: View {
                             .accentColor(.primaryColor)
                             .cornerRadius(10)
                             .padding(10.0)
+//                            .shadow(color: .clear, radius: 0) // 이 방식으로 추가적인 그림자를 제거
                         Text("+")
                             .font(.customFontBig)
 
